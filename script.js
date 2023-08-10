@@ -1,6 +1,7 @@
 
 let todo_list = [];
 
+
 show_todo_list_html();
 
 function add_todo(){
@@ -23,7 +24,7 @@ function show_todo_list_html() {
         let show = todo_list[i];
         //console.log(todo_list[i]);
 
-        let add_html = `<p>${show}</p>`;
+        let add_html = `<p>${show}</p> <button onclick ="Delete_fun();">Delete</button>`;
         show_html += add_html;
 
         //console.log(show_html);   
@@ -34,4 +35,8 @@ function show_todo_list_html() {
 }
 
 
-
+function Delete_fun(i) {
+ 
+  todo_list.splice(i,1); 
+  show_todo_list_html();
+}
